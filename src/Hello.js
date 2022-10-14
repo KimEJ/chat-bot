@@ -214,14 +214,14 @@ class Hello extends React.Component{
           {
             id: "25",
             message: "감사합니다.",
-            options: [
-              { value: "end", label: "종료하기", trigger: "26" },
-            ],
+            trigger: '26',
           },
           {
-            id: "26",
-            end: true,
-          },
+            id: '26',
+            options: [
+              { value: "end", label: "종료하기", end: true, },
+            ],
+          }
         ]}
       />
     )
