@@ -2,9 +2,26 @@ import React from 'react';
 import ChatBot from 'react-simple-chatbot';
 
 class Hello extends React.Component{
+  componentDidMount() {
+    this.handleEnd = this.handleEnd.bind(this);
+  }
+
+  handleEnd({ steps, values }) {
+    console.log(steps);
+    console.log(values);
+    window.parent.postMessage(
+      {
+        type: "close",
+      },
+      "*"
+    );
+
+  }
+
   render() {
     return(
       <ChatBot
+        handleEnd={this.handleEnd}
         steps={[
           {
             id: "1",
@@ -197,6 +214,12 @@ class Hello extends React.Component{
           {
             id: "25",
             message: "감사합니다.",
+            options: [
+              { value: "end", label: "종료하기", trigger: "26" },
+            ],
+          },
+          {
+            id: "26",
             end: true,
           },
         ]}

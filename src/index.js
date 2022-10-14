@@ -6,7 +6,7 @@ const styles = {
 };
 
 const App = () => (
-  <div style={styles}>
+  <div>
     <Hello name="CodeSandbox" />
   </div>
 );
