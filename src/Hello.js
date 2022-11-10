@@ -46,6 +46,7 @@ class Hello extends React.Component{
               { value: "battery", label: "배터리기술", trigger: "6" },
               { value: "car", label: "전기차", trigger: "7" },
               { value: "bio", label: "바이오산업", trigger: "8" },
+              { value: "end", label: "종료하기", end: true, },
             ],
           },
           /////////////////////////////////////////////////////////////////// 넓은 범위 카테고리 선택 확인 메시지
